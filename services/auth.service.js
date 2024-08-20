@@ -65,6 +65,16 @@ class AuthService {
 
     return token
   }
+
+  static decodeUserToken(token) {
+    try {
+      const payload = JWT.verify(token, JWT_SECRET)
+      return payload
+    } catch (err) {
+      return false
+    }
+  }
+
 }
 
 module.exports = AuthService
