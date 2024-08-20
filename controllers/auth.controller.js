@@ -60,7 +60,14 @@ async function handleSignin(req, res) {
   }
 }
 
+// req --> auth.middleware.js --> check the token is valid or not and set the req.user as user --> then check the below fn 
+async function handleMe(req, res) {
+  if (!req.user) return res.json({ isLoggedIn: false })
+  return res.json({ isLoggedIn: true, data: { user: req.user } })
+}
+
 module.exports = {
   handleSignup,
   handleSignin,
+  handleMe
 }
