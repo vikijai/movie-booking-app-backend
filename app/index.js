@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 
 //import routes
 const adminRoutes = require('../routes/admin.routes')
@@ -10,6 +11,7 @@ const app = express()
 
 //middleware
 app.use(express.json())
+app.use(cors())
 app.use(authenticationMiddleware)
 
 app.get('/', (req, res) => {
