@@ -5,6 +5,8 @@ const cors = require('cors')
 const adminRoutes = require('../routes/admin.routes')
 const userRoutes = require('../routes/user.routes')
 const authRoutes = require('../routes/auth.routes')
+const publicRoutes = require('../routes/public.routes')
+const bookingRoutes = require('../routes/booking.routes')
 const { authenticationMiddleware } = require('../middlewares/auth.middleware')
 
 const app = express()
@@ -21,5 +23,7 @@ app.get('/', (req, res) => {
 app.use('/admin', adminRoutes)
 app.use('/auth', authRoutes)
 app.use('/user', userRoutes)
+app.use('/api', publicRoutes)
+app.use('/booking', bookingRoutes)
 
 module.exports = app

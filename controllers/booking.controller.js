@@ -1,7 +1,7 @@
 const {
   bookingCreationValidationSchema,
   verifyPaymentValidationSchema,
-} = require('../lib/validators/booking.validator')
+} = require('../lib/validators/booking.validators')
 const Razorpay = require('razorpay')
 const Show = require('../models/theatre-hall-movie-mapping')
 const Hall = require('../models/theatre-halls.model')
